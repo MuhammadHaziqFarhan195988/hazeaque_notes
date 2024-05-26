@@ -40,10 +40,6 @@ notesPurified = notesFromDatabase.map((note) {
 return notesFromDatabase;
 }
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +73,7 @@ return notesFromDatabase;
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                  return const Text('Looks like your home page is empty, click on the add button to add notes');
+                  return const Center(child: Text('Looks like your home page is empty, click on the add button to add notes'));
                 } else {
                   return NotesBuilder(inputNotes: notesPurified, deleteNotes: _deleteNotes, saveNotes: _updateNote,);
                 }

@@ -18,7 +18,7 @@ class Hazeaque extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hazeaque Notes',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -59,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen>
       child: Container(
         decoration: const BoxDecoration(
           gradient:  LinearGradient(
-              colors: [Colors.black, Colors.teal],
+              colors: [Colors.teal, Colors.black, ],
            begin: Alignment(0.0, 1.0),
               stops: [0.0, 1.0],
               tileMode: TileMode.clamp,
@@ -69,10 +69,10 @@ class _SplashScreenState extends State<SplashScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.file_copy),
+              Icon(Icons.file_copy, color: Colors.teal,),
               SizedBox(height: 20.0),
-              Text("Hazeaque Notes",
-              style: TextStyle(color: Colors.white),),
+              Text("Welcome back, Haziq",
+              style: TextStyle(color: Colors.white, fontSize: 21),),
 
             ],
           ),
