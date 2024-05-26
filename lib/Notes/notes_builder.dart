@@ -4,9 +4,10 @@ import 'package:hazeaque_note/Notes/notes_content.dart';
 import 'package:hazeaque_note/Notes/notes_display.dart';
 
 class NotesBuilder extends StatelessWidget {
-  const NotesBuilder({super.key, required this.inputNotes, required this.deleteNotes});
+  const NotesBuilder({super.key, required this.inputNotes, required this.deleteNotes, required this.saveNotes});
  final List<NotesContent> inputNotes;
   final void Function(NotesContent notesData) deleteNotes;
+  final void Function(String id, NotesContent updatedData) saveNotes;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ deleteNotes(inputNotes[index]);
       },
         child: InkWell(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: ((context) => NotesDisplay(inputNotes[index].title, inputNotes[index].content))));
+              Navigator.push(context, MaterialPageRoute(builder: ((context) => NotesDisplay(inputNotes[index].title, inputNotes[index].content!,inputNotes[index] , saveNotes: saveNotes,))));
             },
             child: NoteBlueprint(inputNotes[index],deleteNotes: deleteNotes)),
       ),
